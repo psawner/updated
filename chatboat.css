@@ -1,0 +1,1224 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #343541;
+    color: white;
+}
+
+/* Container */
+#container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+#navbar {
+    position:fixed;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #01102b;
+    
+    z-index: 2;
+   
+}
+
+#slider {
+    position: fixed;
+    top:60px;
+    left: 0;
+    width: 0;
+    bottom: 0;
+    overflow: hidden;
+    background-image: url("https://wallpaperboat.com/wp-content/uploads/2020/04/minimalist-4k-wallpaper-full-hd.jpg");
+    background-size: cover; 
+    background-position: center; 
+    transition: width 0.3s ease;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    
+}
+
+ 
+#slider-content {
+    flex-grow: 1; /* takes up all space except the bottom button */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: 10px;
+  }
+#slider::-webkit-scrollbar {
+   
+      display: none;
+}
+  
+
+#slider-icons{
+    
+    display: flex;
+    justify-content: space-around;
+}
+#slider-icons i {
+    position: relative;
+    color: white;
+    font-size: 1.5rem;
+    margin: 10px 0;
+    cursor: pointer;
+    color:#ffffff;
+    padding: 10px;
+}
+#slider-icons i:hover{
+    background: #343541;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#slider-icons i::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -60%; /* position above the icon */
+    left: 70%;
+    transform: translateX(-50%);
+    background-color: #000000;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  /* Show tooltip on hover */
+  #slider-icons i:hover::after {
+    opacity: 1;
+  }
+
+/* Main Content */
+#main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    /*background: #444654;*/
+    background-image: url("https://wallpaperboat.com/wp-content/uploads/2020/04/minimalist-4k-wallpaper-full-hd.jpg");
+    background-size: cover; 
+    background-position: center; 
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    
+    
+}
+
+
+
+#icons {
+    display: flex;
+    align-items: center;
+}
+#icons i{
+    position: relative;
+    margin: 10px;
+    font-size: 1.5rem;
+    padding: 10px;
+    color: #ffffff;
+
+}
+
+#icons i:hover{
+    background: #343541;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+#icons i::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -60%; /* position above the icon */
+    left: 90%;
+    transform: translateX(-50%);
+    background-color: #000000;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1000;
+
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+    letter-spacing: 1px;
+  }
+  
+  /* Show tooltip on hover */
+  #icons i:hover::after {
+    opacity: 1;
+  }
+
+#profile-pic img{
+    width:70px;
+}
+#profile-pic img:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+
+#main {
+    position: relative;
+    margin-left: 20px;
+}
+
+  .dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .dot1 {
+    background: #05fa19;
+    top: -2px;
+    left: -3px;
+    
+  }
+
+  .dot2 {
+    background: #ff0000;
+    bottom: 2px;
+    left: 0;
+  }
+
+  .dot3 {
+    background: #fbff00;
+    bottom: 0;
+    right: 0;
+  }
+
+  /*.rotate {
+    animation: spin 5s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }*/
+
+.chatboatpic {
+    width: 35px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.user-pic {
+    width: 35px;
+    border-radius: 50%;
+}
+
+/* Chat Content */
+.content {
+    
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+    padding-top: 100px;
+    
+}
+
+/* Chat Box */
+#chatContainer {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 60vh;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* Messages */
+.message {
+    max-width: 80%;
+    padding: 12px 15px;
+    border-radius: 12px;
+    margin: 5px 0;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.user-message {
+    align-self: flex-end;
+    background: #020d2b;
+    color: white;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background: #021035;
+    color: white;
+}
+
+/* Chat Input */
+h2 {
+    color: #ffffff;
+    text-align: center;
+    background: rgba(2, 15, 51, 0.24); /* semi-transparent background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px;
+
+
+}
+h2 span{
+    font-size: 2rem;
+    background:conic-gradient(from 35deg,#c00d0d 53%, #00ff00 60%,yellow 20%);
+    background-size: 200% 200%; /* optional for effect scale */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: moveGradient 4s linear infinite;
+
+}
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+        transform: rotate(0deg);
+    }
+    100% {
+        background-position: 100% 50%;
+        transform: rotate(360deg);
+    }
+}
+.chat-footer {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-container {
+    position: relative;
+    width: 50%;
+    display: flex;
+    background: #1c1c2e;
+    border-radius: 20px;
+    padding: 10px;
+    align-items: center;
+}
+.input-container i:hover{
+    opacity: 0.9;
+}
+.input-container i::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 80%; /* position above the icon */
+    left: 97%;
+    transform: translateX(-50%);
+    background-color: #000000;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 0.76rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 100;
+
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  /* Show tooltip on hover */
+  .input-container i:hover::after {
+    opacity: 1;
+  }
+
+  #voiceButton{
+    font-size: 1.5rem;
+    text-align: center;
+    color:#ffffff;
+    padding: 10px;
+    border-radius: 50%;
+    
+ }
+ #voiceButton:hover{
+    opacity: 0.5;
+ }
+@media screen and (min-width:300px) and (max-width:800px) {
+    .input-container {
+        width: 100%;
+       
+    }
+    .input-container {
+        width: 80%;
+        position: fixed;
+        bottom: 0px;
+        left:50%;
+        transform: translateX(-50%);
+        width: 100%;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        
+        
+    }
+    .input-container i::after {
+        bottom: 70%; 
+        left: 94%;
+    }
+    
+    
+    
+}
+@media screen and (min-width:800px) and (max-width:1000px) {
+    .input-container {
+        width: 100%;
+       
+    }
+    .input-container {
+        width: 80%;
+        position: fixed;
+        bottom: 0px;
+        left:50%;
+        transform: translateX(-50%);
+        width: 100%;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        
+    }
+    .input-container i::after {
+        bottom: 80%; 
+        left: 94%;
+    }
+}
+
+input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+    padding: 10px;
+    outline: none;
+}
+
+
+
+::-webkit-scrollbar-button:single-button:decrement {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="grey"><path d="M7 14l5-5 5 5z"/></svg>') no-repeat center;
+    background-size:cover;
+    height: 30px;
+}
+
+/* Scrollbar Up Button */
+::-webkit-scrollbar-button:single-button:decrement {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="grey"><path d="M7 14l5-5 5 5z"/></svg>') no-repeat center;
+    background-size: cover;
+    height: 30px;
+}
+
+/* Scrollbar Down Button */
+::-webkit-scrollbar-button:single-button:increment {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="grey"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat center;
+    background-size: cover;
+    height: 30px;
+}
+
+/* 🔥 Hover Effect: Change Arrow to White */
+::-webkit-scrollbar-button:single-button:decrement:hover,
+::-webkit-scrollbar-button:single-button:increment:hover {
+    filter: invert(1);
+
+}
+
+/* Scrollbar Track (Background) */
+::-webkit-scrollbar {
+   
+    width: 8px; /* Adjust width */
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+    background: #555; /* Change scrollbar color */
+    border-radius: 10px;
+}
+
+/* Scrollbar Track when scrolling */
+::-webkit-scrollbar-thumb:hover {
+    background: #888;
+}
+
+
+
+#wraper{
+    position:absolute;
+    transition: all 0.3s ease;
+    width: 0;
+    overflow: hidden;
+    z-index: 1000;
+}
+#wraper.active {
+    width: 500px; /* or any value you prefer */
+}
+#hidden{
+    border-radius: 10px;
+    background-image: url("https://wallpapercave.com/wp/wp8963376.jpg");
+    background-size: cover; 
+    background-position: left; 
+    height: 400px;
+    left:50%;
+    width: 500px;
+    z-index: 1000;
+}
+#head1{
+    border-bottom: 2px solid rgb(73, 71, 71);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px;
+}
+#head1 i{
+    color:#7a7143;
+    cursor: pointer;
+}
+#middle{
+    padding: 10px;
+}
+#middle i{
+    padding: 5px;
+    display: flex;
+    gap: 10px;
+    color:#7a7143;
+    cursor: pointer;
+}
+p{
+    color: white;
+}
+
+
+
+@media screen and (min-width:300px) and (max-width:600px) {
+    #wraper{
+        position:absolute;
+        top: 0;
+        transition: all 0.3s ease;
+        width: 0;
+        overflow: hidden;
+        z-index: 1000;
+    }
+    #wraper.active {
+        width: 100%; /* or any value you prefer */
+    }
+    #hidden{
+        border-radius: 0px;
+        background-color: #2e2f30;
+        height: 100dvh;
+        left:50%;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+}
+
+#explore{
+    margin-top: -20px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    
+}
+#clone{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+#clone i{
+    background-color: #04042b;
+    color:#fcfcfc;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+#upgrades{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+#upgrades:hover{
+    background: #303549;
+    border-radius: 5px;
+}
+#more{
+    background-color: #04042b;
+    color:#fcfcfc;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 1rem;
+}
+#explore-nova{
+   
+    padding: 10px;
+    display: flex;
+    gap:5px;
+    align-items: center;
+}
+#explore-nova:hover{
+    background-color: #303549;
+    border-radius: 5px;
+}
+
+#upgrades button {
+    padding: 5px;
+    background-color: #03112b;
+    color: #ffffff;
+    border: none;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 40%;
+}
+#upgrades button:active {
+    transform: scale(1);
+    box-shadow: 0 0 10px #f8f408; 
+    
+    
+}
+
+
+
+#guidelines {
+    position: fixed;
+    top: 0;
+    width: 0;
+    height: 100vh;
+    background-image: url("https://images.hdqwalls.com/download/minimalist-mountains-night-4k-zy-3840x2160.jpg");
+    background-size: cover; 
+    background-position: center; 
+    color: #ffffff;
+    overflow: hidden;
+    right: 0;
+    transition: width 0.4s ease-in-out;
+    z-index: 999;
+  }
+  
+  #guidelines.active {
+    width: 100%;
+  }
+  
+  #guidelines h2 {
+    margin-top: 50px;
+  }
+  
+  #guidelines ul {
+    margin-top: 20px;
+    padding-left: 50px;
+  }
+  
+  #guidelines li {
+    margin-bottom: 10px;
+  }
+  
+  #close-guidelines {
+    position: absolute;
+    color: #ffffff;
+    right: 0;
+    padding: 10px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+ 
+
+ #show-guidelines{
+    margin-top: auto;
+    align-self: center;
+    width: 40%;
+    padding: 5px;
+    background-color: #030927;
+    color: #ffffff;
+    border: none;
+    border-radius: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#show-guidelines:active {
+    transform: scale(1);
+    box-shadow: 0 0 10px #f8f408; 
+    
+    
+}
+
+
+
+#subscription{
+    position: fixed;
+    top: 0;
+    width: 0;
+    height: 100vh;
+    background-image: url("https://wallpaperaccess.com/full/3046435.jpg");
+    background-size: cover; 
+    background-position: center; 
+    z-index: 1000;
+    overflow-y: scroll;
+    transition: width 0.5s ease-in-out;
+}
+#subscription.active {
+    width: 100%; 
+  }
+#cut{
+    display: flex;
+    justify-content: right;
+    padding: 30px;
+    
+    
+}
+#close{
+    cursor: pointer;
+}
+
+
+
+  .plans {
+    padding: 120px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    
+    
+}
+
+  .plan-card {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 20px;
+    flex-direction: column;
+    
+  }
+
+  .plan-card.active {
+    display: flex;
+  }
+
+  .plan-card h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .plan-card .price {
+    font-size: 32px;
+    margin: 10px 0;
+  }
+
+  .plan-card p {
+    margin-bottom: 20px;
+  }
+
+  .plan-card button {
+    padding: 10px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+
+  .plan-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #ccc;
+  }
+
+  .plan-card ul li {
+    margin-bottom: 8px;
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #27ae60;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+  }
+
+  .relative {
+    position: relative;
+  }
+
+ @media screen and (min-width:300px) and (max-width:700px) {
+    .plans {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        
+        
+    }
+    
+ }
+
+ 
+
+ #plane{
+    background:linear-gradient(rgb(236, 155, 79),rgb(146, 17, 146));
+    font-size: 1.2rem;
+    text-align: center;
+    color:#ffffff;
+    padding: 10px;
+    border-radius: 50%;
+    display: none;
+    cursor: pointer;
+ }
+ #plane:hover{
+    opacity: 0.5;
+ }
+ #plane:hover::after {
+    opacity: 0;
+}
+
+
+ @media screen and (min-width:300px) and (max-width:1300px){
+    #navbar{
+        height:50px;
+    }
+    #slider{
+        top:50px;
+        
+    }
+    #icons i{
+        margin: 0px;
+        font-size: 1.2rem;
+        padding: 7px;
+    }
+    #icons img{
+        margin-left: -2px;
+        width:30px;
+    }
+    #profile-pic img{
+        width:40px;
+    }
+    #slider-icons{
+        justify-content: left;
+        
+    }
+    #slider-icons i {
+        font-size: 1.2rem;
+        padding: 7px;
+        margin-left: 12px;
+        
+    }
+   
+    #slider-icons i:hover::after {
+        opacity: 0;
+    }
+      
+    #icons i:hover::after {
+        opacity: 0;
+    }
+    #clone i{
+        padding: 5px;
+        font-size: 1rem;
+    }
+    #upgrades{
+        margin-left: -5px;
+        padding: 5px;
+    }
+    #more{
+        font-size: 1rem;
+        padding: 5px;
+    }
+    #explore-nova{
+       padding: 5px;
+       margin-left: -5px;
+    }
+    #clone p{
+        font-size: 0.86rem;
+    }
+    #upgrade{
+        margin-right: 25px;
+        font-size: 0.76rem;
+    }
+    #explore-nova p{
+        font-size:0.86rem;
+    }
+    #show-guidelines{
+        font-size: 0.76rem;
+    }
+    .input-container i:hover::after {
+        opacity: 0;
+    }
+    .user-message {
+        font-size: 0.86rem;
+    }
+    
+    .bot-message {
+        font-size: 0.86rem;
+        max-width: 100%;
+    }
+    #plane{
+        font-size: 1.0rem;
+    }
+    #plane:hover::after {
+        opacity: 0;
+    }
+    #voiceButton{
+        font-size: 1.2rem;
+        
+        
+    }
+    div{
+        font-size: 0.86rem;
+    }
+    #main-content{
+        background-position: 0; 
+    }
+}
+
+
+
+
+
+
+ 
+  
+  
+  
+ 
+  
+ .typing-indicator {
+    display: inline-flex;
+    align-self: flex-start;
+    background: #020f33;
+    color: white;
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin: 5px 0;
+  }
+  
+  .typing-indicator span {
+    display: inline-block;
+    background: #fff;
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
+    border-radius: 50%;
+    animation: blink 1.3s infinite ease-in-out;
+  }
+  
+  .typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  .typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes blink {
+    0%, 80%, 100% {
+      opacity: 0.2;
+    }
+    40% {
+      opacity: 1;
+    }
+  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  /*.orbit-wrapper {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    margin-top: -380px ;
+    
+  }
+  .orbit {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  
+  .orbit.red {
+    background: red;
+    animation: orbit 2s linear infinite;
+    animation-delay: 2s;
+    transform-origin: 9px 0px;
+  }
+  
+  .orbit.green {
+    background: limegreen;
+    animation: orbit 2s linear infinite;
+    animation-delay: 2.5s;
+    transform-origin: 9px 0px;
+  }
+  
+  .orbit.blue {
+    background: rgb(233, 255, 30);
+    animation: orbit 2s linear infinite;
+    animation-delay: 3s;
+    transform-origin: 9px 0px;
+  }
+  
+  
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(9px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(9px) rotate(-360deg);
+    }
+  }
+  */
+
+
+
+  #scroll-buttons {
+    position: fixed;
+    bottom: 105px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 10;
+  }
+  
+  
+  #scroll-buttons i {
+    background: rgba(8, 2, 65, 0.5);
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 50%;
+    border: 1px solid rgb(48, 43, 70);
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    transition: background 0.3s ease;
+  }
+  
+  #scroll-buttons i:hover {
+    background: rgba(6, 4, 41, 0.75);
+  }
+  
+  @media screen and (max-width:1300px){
+    #scroll-buttons {
+        position: fixed;
+        bottom: 65px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        z-index: 10;
+      }
+
+  }
+
+
+
+h3{
+    
+    font-size: 1.5rem;
+    background:conic-gradient(from 35deg,#c00d0d 53%, #00ff00 0%,yellow 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+
+@media screen and (min-width:300px) and (max-width:400px){
+    h3{
+        position: absolute;
+        top:60px;
+    }
+}
+
+#getting-info{
+    margin-top: 8px;
+    padding: 5px;
+}
+#getting-info i{
+    padding: 3px;
+    color:#3f3f41;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+#getting-info i:hover::after {
+    opacity: 0;
+}
+
+@media screen and (min-width:300px) and (max-width:333px){
+    #getting-info{
+        
+        padding: 0px;
+    }
+    #getting-info i{
+        padding: 1px;
+        font-size: 0.78rem;
+    }
+}
+
+#emojiPopup {
+    position: absolute;
+    bottom: 80px; /* adjust as needed */
+    right: 60px;
+    background: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: none;
+  }
+#emojiPopup{
+    cursor: pointer;
+}  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+#chat-history {
+    padding: 10px;
+    overflow-y: auto;
+    background: #030e2e;
+    color: #ffffff;
+    text-align: left;
+    margin-bottom: 10px;
+    
+}
+ 
+.chat-date {
+    text-align: center;
+    margin: 15px 0 5px;
+    color: #666;
+    font-weight: bold;
+  }
+  
+  
+  .time {
+    font-size: 0.75rem;
+    color: #999;
+    margin-left: 10px;
+  }
+  
+  @media screen and (min-width:300px) and (max-width:400px){
+    #main-content{
+        background-image: url("https://wallpaperboat.com/wp-content/uploads/2020/04/minimalist-4k-wallpaper-full-hd.jpg");
+        background-size: cover; 
+        background-position: center; 
+    }
+    
+  }
+
+
+
+
+
+.history-user {
+    background: none !important;
+    text-align: left !important;
+    align-self: flex-start !important;
+    padding: 6px 10px;
+    margin: 4px 0;
+    border-radius: 6px;
+    color: #000;
+  }
+  
+ 
+  
+  .message.preview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    background: #001f3f;
+    border-bottom: 1px solid #03376c;
+    cursor: pointer;
+  }
+  
+  .message.preview strong {
+    color: #fff;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .message.preview .time {
+    color: #ccc;
+    font-size: 12px;
+    margin-left: 10px;
+    flex-shrink: 0;
+  }
+  
+  
+ 
